@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { CountryModule } from './country/country.module';
 import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-rounting.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,8 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    
     CountryModule,
     SharedModule
   ],
