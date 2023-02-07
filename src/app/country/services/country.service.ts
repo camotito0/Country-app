@@ -7,12 +7,13 @@ import { catchError, Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class CountryService {
-  private apiUrl: string = 'https://restcountries.com/v3.1'
+  private apiUrl: string = 'https://restcountries.com/v3.1';
+  private apiUrlRegional:string = 'https://restcountries.com/v2/regionalbloc';
 
   constructor( private http: HttpClient ) { }
 
-  searchCountry( textInput:string ):Observable<Country[]> {
-    const url = `${this.apiUrl}/name/${textInput}`
+  searchCountry( country:string ):Observable<Country[]> {
+    const url = `${this.apiUrl}/name/${country}`
     return this.http.get<Country[]>( url )
     // tambien se suele trabajar de está manera, se atrapa el
     // error con el catchError y los seteamos con of para enviar un arreglo vacio
@@ -21,13 +22,13 @@ export class CountryService {
       ); */
   }
 
-  searchCapital( textInput:string ): Observable<Country[]> {
-    const url = `${this.apiUrl}/capital/${textInput}`
+  searchCapital( capital:string ): Observable<Country[]> {
+    const url = `${this.apiUrl}/capital/${capital}`
     return this.http.get<Country[]>( url )
   }
 
-  searchRegion( textInput:string ): Observable<Country[]> {
-    const url = `${this.apiUrl}/region/${textInput}`
+  searchRegion( region:string ): Observable<Country[]> {
+    const url = `${this.apiUrlRegional}/${region}`
     return this.http.get<Country[]>( url )
   }
 
