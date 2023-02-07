@@ -1,1 +1,22 @@
-<p>by-country works!</p>
+<h2>By country</h2>
+<hr/>
+<div class="row">
+	<div class="col">
+    <app-country-input
+      (onEnter)="buscar($event)"
+      (onDebounce)="suggestions($event)"
+      placeholder="Search country..."
+    ></app-country-input>
+	</div>
+</div>
+<hr/>
+
+<div  *ngIf="errorMessage" class=" alert alert-danger">
+	No se encontró nada con el termino {{textInput}}
+</div>
+
+<div *ngIf="!errorMessage && countries.length >=1 " class="row">
+	<div class="col">
+    <app-country-table [countries]="countries"></app-country-table>
+	</div>
+</div>

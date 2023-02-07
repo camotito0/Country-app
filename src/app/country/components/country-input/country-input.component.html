@@ -1,0 +1,10 @@
+<form (ngSubmit)="buscar()" >
+  <input autocomplete="off"
+    type="text"
+    name="textInput"
+    [placeholder]="placeholder"
+    class="form-control"
+    [(ngModel)] = "textInput"
+    (input)="keyPressed()"
+  />
+</form>

@@ -1,1 +1,67 @@
-<p>view-country works!</p>
+<div *ngIf="!country; else infoCountry" class="alert alert-info">
+  Wait please...
+</div>
+
+<ng-template #infoCountry>
+</ng-template>
+<div class="row">
+  <div class="col-12">
+    <h1>Country: <small>{{country.name.common}}</small></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="co-4">
+    <h3>Flag</h3>
+    <img class="img-thumbnail" [src]="country.flags.svg" [alt]="country.flags.alt" />
+  </div>
+  <div class="col">
+    <h3>Information</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Poblation</strong> {{country.population | number}}
+      </li>
+      <li class="list-group-item">
+        <strong>Numeric code</strong> {{country.ccn3}}
+      </li>
+      <li class="list-group-item">
+        <strong>Alpha3 code</strong> {{country.cca2}}
+      </li>
+    </ul>
+  </div>
+
+  <h3>Translates</h3>
+  <div class="row">
+    <div class="col">
+      <span class="badge bg-primary mr-1" >{{country.translations['ara'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['bre'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['ces'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['cym'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['deu'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['est'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['fin'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['fra'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['hrv'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['hun'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['ita'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['jpn'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['kor'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['nld'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['per'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['pol'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['rus'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['slk'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['spa'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['srp'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['swe'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['tur'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['urd'].official}}</span>
+      <span class="badge bg-primary mr-1" >{{country.translations['zho'].official}}</span>
+    </div>
+  </div>
+
+  <!-- <pre class="mt-5">
+      {{country | json}}
+  </pre> -->
+
+</div>
+

@@ -10,14 +10,14 @@ const routes:Routes = [
   { path: '', component: ByCountryComponent, pathMatch: 'full' },
   { path: 'region', component: ByRegionComponent },
   { path: 'capital', component: ByCapitalComponent},
-  { path: 'pais/:id', component: ViewCountryComponent},
+  { path: 'country/:id', component: ViewCountryComponent},
   { path: '**', redirectTo: ''}
 ];
 
 @NgModule({
   imports:[
     RouterModule.forRoot(routes)
-  ], 
+  ],
   exports: [
     RouterModule
   ]
