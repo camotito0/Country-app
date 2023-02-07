@@ -30,19 +30,23 @@ export class ByRegionComponent {
 
   constructor( private countryService: CountryService ) {}
 
-  getRegions() {
+/* getRegions() {
     this.countryService.searchRegion( this.activeRegion )
     .subscribe(
       (resp) => this.regions = resp
     )
-  }
+  } */
 
   getClassCss( region:string ) {
     return region === this.activeRegion ? 'btn btn-primary': 'btn btn-outline-primary';
   }
 
   activateRegion(region:string) {
+    if( region === this.activeRegion) {return;}
     this.activeRegion = region;
+    this.regions = [];
+    this.countryService.searchRegion( this.activeRegion )
+    .subscribe( resp => this.regions = resp)
   }
 
 }

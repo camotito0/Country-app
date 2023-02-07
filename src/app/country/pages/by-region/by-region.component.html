@@ -1,6 +1,6 @@
 <h2>By Region: <strong>{{activeRegion | titlecase}}</strong></h2>
 <div class="row">
-  <div class="col">
+  <div class="col mt-3">
     <!-- [class.btn-primary]='region === regionActiva' -->
     <!--  [ngClass]="{
       'btn-primary': activeRegion === region,
@@ -8,14 +8,15 @@
     }" -->
     <button *ngFor="let region of regionsCode"
       [class]="  getClassCss( region )"
-      (click) = 'activateRegion(region); getRegions()'
+      (click) = 'activateRegion(region)'
     >
       {{region | titlecase}}
     </button>
+  </div>
+</div>
 
-    <app-country-table
-      *ngIf="regions.length > 0"
-      [countries]="regions" >
-    </app-country-table>
+<div class="row mt-3" *ngIf="regions.length > 0">
+  <div class="col">
+    <app-country-table [countries]="regions"></app-country-table>
   </div>
 </div>
