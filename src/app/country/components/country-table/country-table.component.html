@@ -14,13 +14,13 @@
       <td> {{i}} </td>
       <td>
         <img class="small-flag"
-          [src]="country.flags.png"
-          [alt]="country.flags.alt"
+          [src]="country.flag"
+          [alt]="country.flag"
         />
       </td>
-      <td> {{country.capital}}, {{country.name.common}} </td>
+      <td> {{country.capital}}, {{country.name}} </td>
       <td> {{country.population | number }} </td>
-      <td> <a [routerLink]="['/country', country.cca2 ]">Ver...</a> </td>
+      <td> <a [routerLink]="['/country', country.alpha2Code]">Ver...</a> </td>
     </tr>
   </tbody>
 </table>

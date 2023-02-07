@@ -30,12 +30,13 @@ export class ByRegionComponent {
 
   constructor( private countryService: CountryService ) {}
 
-/* getRegions() {
-    this.countryService.searchRegion( this.activeRegion )
-    .subscribe(
-      (resp) => this.regions = resp
-    )
-  } */
+  /* getRegions() {
+      this.countryService.searchRegion( this.activeRegion )
+      .subscribe(
+        (resp) => this.regions = resp
+      )
+    }
+  */
 
   getClassCss( region:string ) {
     return region === this.activeRegion ? 'btn btn-primary': 'btn btn-outline-primary';

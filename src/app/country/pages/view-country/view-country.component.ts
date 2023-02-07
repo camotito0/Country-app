@@ -29,7 +29,7 @@ export class ViewCountryComponent implements OnInit{
       tap(console.log)
     )
     .subscribe( (resp) => {
-      this.country = resp[0];
+      this.country = resp;
      })
 
    /*  this.activatedRoute.params
