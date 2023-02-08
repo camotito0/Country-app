@@ -1,3 +1,3 @@
 # CountryApp
 
-Search countries by capital, region and see her information
+Search countries by capital, region and see their information
